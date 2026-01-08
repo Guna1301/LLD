@@ -108,3 +108,13 @@ public class GoodDesign {
         usCheckout.completeOrder(2000.0);
     }
 }
+
+// The above code demonstrates the Abstract Factory Pattern by creating families of related objects (PaymentGateway and Invoice) without specifying their concrete classes.
+// Benefits of this design include:
+/*
+1. Scalability: New regions can be added easily by creating new factory classes without modifying existing
+2. Consistency: Ensures that related objects are used together (e.g., GSTInvoice with Razorpay)
+3. Separation of Concerns: The CheckOutService class is decoupled from the concrete
+    implementations of PaymentGateway and Invoice, focusing only on their usage.
+4. Adherence to SOLID Principles: The design follows the Open/Closed Principle and Dependency Inversion Principle, promoting maintainable and flexible code.
+*/
