@@ -91,6 +91,8 @@ public class Solution {
 }
 
 /*
+how this solves previous issues:
+
 probem: channel is tightly coupled with notification logic
 solution: each subscriber handles its own notifcation via the update method
 

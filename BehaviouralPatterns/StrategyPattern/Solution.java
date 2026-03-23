@@ -60,6 +60,8 @@ public class Solution {
 }
 
 /*
+how this solves previous issues:
+
 problem: violation of ocp
 solution here: new strategies can be added without modifying the existing service codem just create a new class implementing the MatchingStrategy interface.
 
