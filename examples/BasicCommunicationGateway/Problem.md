@@ -1,4 +1,4 @@
-# Unified Communication Gateway - System Design Problem
+# Communication Gateway - System Design Problem
 
 ## Overview
 
@@ -6,7 +6,6 @@ Design and implement a backend module for a **Unified Communication Gateway** th
 
 The system should abstract the complexities of individual communication channels and provide a single, consistent interface for sending notifications.
 
----
 
 ## Problem Statement
 
@@ -14,7 +13,6 @@ Your task is to design a system that processes incoming notification requests an
 
 The system must support multiple channels, each with its own behavior, constraints, and validation logic.
 
----
 
 ## Supported Channels (Initial Version)
 
@@ -22,7 +20,6 @@ The system must support multiple channels, each with its own behavior, constrain
 * SMS
 * Push Notifications
 
----
 
 ## Future Expansion (Must Be Supported by Design)
 
@@ -32,7 +29,6 @@ The system should be designed in a way that allows easy addition of new channels
 * Slack
 * In-app messaging
 
----
 
 ## Input Format
 
@@ -47,7 +43,6 @@ Each notification request will be received in the following structure:
 }
 ```
 
----
 
 ## Functional Requirements
 
@@ -78,7 +73,6 @@ Each notification request will be received in the following structure:
    * Clear separation of concerns
    * Clean and maintainable code structure
 
----
 
 ## Non-Functional Requirements
 
@@ -87,7 +81,6 @@ Each notification request will be received in the following structure:
 * The design should follow **clean architecture principles**
 * The system should be **scalable and maintainable**
 
----
 
 ## Constraints
 
@@ -95,7 +88,6 @@ Each notification request will be received in the following structure:
 * Avoid tight coupling between components
 * The calling layer (e.g., controller/service) should not be aware of channel-specific logic
 
----
 
 ## Edge Cases to Consider
 
@@ -105,7 +97,6 @@ Each notification request will be received in the following structure:
 * Message delivery failures
 * Handling high-priority notifications differently
 
----
 
 ## Expectations
 
