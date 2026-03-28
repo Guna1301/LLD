@@ -5,7 +5,7 @@ import java.util.*;
 // Mediator interface
 interface DocumentSessionMediator {
     void join(User user);
-    void sendChangeNotification(String fromUser, String change);
+    void sendChangeNotification(User fromUser, String change);
 }
 
 // Concrete Mediator
@@ -22,9 +22,9 @@ class CollaborativeDocument implements DocumentSessionMediator{
     }
 
     @Override
-    public void sendChangeNotification(String fromUser, String change) {
+    public void sendChangeNotification(User fromUser, String change) {
         for (User user : users) {
-            if (!user.getName().equals(fromUser)) {
+            if (user!=fromUser) { // notify all users except the one who made the change
                 user.receiveChangeNotification(fromUser, change);
             }
         }
@@ -47,11 +47,11 @@ class User {
 
     public void makeChange(String change) {
         System.out.println(name + " made a change: " + change);
-        mediator.sendChangeNotification(name, change); // notify the mediator of the change
+        mediator.sendChangeNotification(this, change); // notify the mediator of the change
     }
 
-    public void receiveChangeNotification(String fromUser, String change) {
-        System.out.println(name + " received a change notification from " + fromUser + ": " + change);
+    public void receiveChangeNotification(User fromUser, String change) {
+        System.out.println(name + " received a change notification from " + fromUser.getName() + ": " + change);
     }
 }
 
